@@ -2,9 +2,45 @@ package datumi;
 
 import java.util.GregorianCalendar;
 
-import valute.Valuta;
+public class Datum {
 
-public class Datum extends Valuta {
+	private double prodajniKurs;
+	private double kupovniKurs;
+	private double srednjiKurs;
+	private GregorianCalendar datum;
+
+	public double getProdajniKurs() {
+		return prodajniKurs;
+	}
+
+	public void setProdajniKurs(double prodajniKurs) {
+		this.prodajniKurs = prodajniKurs;
+	}
+
+	public double getKupovniKurs() {
+		return kupovniKurs;
+	}
+
+	public void setKupovniKurs(double kupovniKurs) {
+		this.kupovniKurs = kupovniKurs;
+	}
+
+	public double getSrednjiKurs() {
+		return srednjiKurs;
+	}
+
+	public void setSrednjiKurs(double srednjiKurs) {
+		this.srednjiKurs = srednjiKurs;
+	}
+
+	public GregorianCalendar getDatum() {
+		return datum;
+	}
+
+	public void setDatum(GregorianCalendar datum) {
+		this.datum = datum;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -49,40 +85,4 @@ public class Datum extends Valuta {
 				+ ", datum=" + datum + "]";
 	}
 
-	private double prodajniKurs;
-	private double kupovniKurs;
-	private double srednjiKurs;
-	private GregorianCalendar datum;
-
-	public double getProdajniKurs() {
-		return prodajniKurs;
-	}
-
-	public void setProdajniKurs(double prodajniKurs) {
-		this.prodajniKurs = prodajniKurs;
-	}
-
-	public double getKupovniKurs() {
-		return kupovniKurs;
-	}
-
-	public void setKupovniKurs(double kupovniKurs) {
-		this.kupovniKurs = kupovniKurs;
-	}
-
-	public double getSrednjiKurs() {
-		return srednjiKurs;
-	}
-
-	public void setSrednjiKurs(double srednjiKurs) {
-		this.srednjiKurs = srednjiKurs;
-	}
-
-	public GregorianCalendar getDatum() {
-		return datum;
-	}
-
-	public void setDatum(GregorianCalendar datum) {
-		this.datum = datum;
-	}
 }

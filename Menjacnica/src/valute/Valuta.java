@@ -1,8 +1,21 @@
 package valute;
 
+import java.util.LinkedList;
+
+import datumi.Datum;
+
 public class Valuta {
 	private String naziv;
 	private String skraceniNaziv;
+	private LinkedList<Datum> datumi;
+
+	public LinkedList<Datum> getDatumi() {
+		return datumi;
+	}
+
+	public void setDatumi(LinkedList<Datum> datumi) {
+		this.datumi = datumi;
+	}
 
 	public String getNaziv() {
 		return naziv;
@@ -22,13 +35,14 @@ public class Valuta {
 
 	@Override
 	public String toString() {
-		return "Valuta [naziv=" + naziv + ", skraceniNaziv=" + skraceniNaziv + "]";
+		return "Valuta [naziv=" + naziv + ", skraceniNaziv=" + skraceniNaziv + ", datum=" + datumi + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((datumi == null) ? 0 : datumi.hashCode());
 		result = prime * result + ((naziv == null) ? 0 : naziv.hashCode());
 		result = prime * result + ((skraceniNaziv == null) ? 0 : skraceniNaziv.hashCode());
 		return result;
@@ -43,6 +57,11 @@ public class Valuta {
 		if (getClass() != obj.getClass())
 			return false;
 		Valuta other = (Valuta) obj;
+		if (datumi == null) {
+			if (other.datumi != null)
+				return false;
+		} else if (!datumi.equals(other.datumi))
+			return false;
 		if (naziv == null) {
 			if (other.naziv != null)
 				return false;
