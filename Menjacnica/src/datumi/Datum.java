@@ -14,7 +14,11 @@ public class Datum {
 	}
 
 	public void setProdajniKurs(double prodajniKurs) {
-		this.prodajniKurs = prodajniKurs;
+		if (prodajniKurs <= 0) {
+			throw new RuntimeException("Prodajni kurs mora biti veci od 0");
+		} else {
+			this.prodajniKurs = prodajniKurs;
+		}
 	}
 
 	public double getKupovniKurs() {
@@ -22,7 +26,11 @@ public class Datum {
 	}
 
 	public void setKupovniKurs(double kupovniKurs) {
-		this.kupovniKurs = kupovniKurs;
+		if (kupovniKurs <= 0) {
+			throw new RuntimeException("Kupovni kurs mora biti veci od 0");
+		} else {
+			this.kupovniKurs = kupovniKurs;
+		}
 	}
 
 	public double getSrednjiKurs() {
@@ -30,7 +38,11 @@ public class Datum {
 	}
 
 	public void setSrednjiKurs(double srednjiKurs) {
-		this.srednjiKurs = srednjiKurs;
+		if (srednjiKurs <= 0) {
+			throw new RuntimeException("Srednji kurs mora biti veci od 0");
+		} else {
+			this.srednjiKurs = srednjiKurs;
+		}
 	}
 
 	public GregorianCalendar getDatum() {
@@ -38,7 +50,11 @@ public class Datum {
 	}
 
 	public void setDatum(GregorianCalendar datum) {
-		this.datum = datum;
+		if (datum == null) {
+			throw new NullPointerException("Pogresno unet datum");
+		} else {
+			this.datum = datum;
+		}
 	}
 
 	@Override

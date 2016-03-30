@@ -14,7 +14,11 @@ public class Valuta {
 	}
 
 	public void setDatumi(LinkedList<Datum> datumi) {
-		this.datumi = datumi;
+		if (datumi == null) {
+			throw new NullPointerException("Pogresno unet datum");
+		} else {
+			this.datumi = datumi;
+		}
 	}
 
 	public String getNaziv() {
@@ -22,7 +26,11 @@ public class Valuta {
 	}
 
 	public void setNaziv(String naziv) {
-		this.naziv = naziv;
+		if (naziv == null || naziv.isEmpty()) {
+			throw new NullPointerException("Pogresno unet naziv");
+		} else {
+			this.naziv = naziv;
+		}
 	}
 
 	public String getSkraceniNaziv() {
@@ -30,7 +38,11 @@ public class Valuta {
 	}
 
 	public void setSkraceniNaziv(String skraceniNaziv) {
-		this.skraceniNaziv = skraceniNaziv;
+		if (skraceniNaziv == null || skraceniNaziv.isEmpty()) {
+			throw new NullPointerException("Pogresno unet skraceni naziv");
+		} else {
+			this.skraceniNaziv = skraceniNaziv;
+		}
 	}
 
 	@Override
