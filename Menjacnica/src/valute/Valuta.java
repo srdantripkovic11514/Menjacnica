@@ -3,9 +3,6 @@ package valute;
 public class Valuta {
 	private String naziv;
 	private String skraceniNaziv;
-	private double prodajniKurs;
-	private double kupovniKurs;
-	private double srednjiKurs;
 
 	public String getNaziv() {
 		return naziv;
@@ -23,27 +20,40 @@ public class Valuta {
 		this.skraceniNaziv = skraceniNaziv;
 	}
 
-	public double getProdajniKurs() {
-		return prodajniKurs;
+	@Override
+	public String toString() {
+		return "Valuta [naziv=" + naziv + ", skraceniNaziv=" + skraceniNaziv + "]";
 	}
 
-	public void setProdajniKurs(double prodajniKurs) {
-		this.prodajniKurs = prodajniKurs;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((naziv == null) ? 0 : naziv.hashCode());
+		result = prime * result + ((skraceniNaziv == null) ? 0 : skraceniNaziv.hashCode());
+		return result;
 	}
 
-	public double getKupovniKurs() {
-		return kupovniKurs;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Valuta other = (Valuta) obj;
+		if (naziv == null) {
+			if (other.naziv != null)
+				return false;
+		} else if (!naziv.equals(other.naziv))
+			return false;
+		if (skraceniNaziv == null) {
+			if (other.skraceniNaziv != null)
+				return false;
+		} else if (!skraceniNaziv.equals(other.skraceniNaziv))
+			return false;
+		return true;
 	}
 
-	public void setKupovniKurs(double kupovniKurs) {
-		this.kupovniKurs = kupovniKurs;
-	}
-
-	public double getSrednjiKurs() {
-		return srednjiKurs;
-	}
-
-	public void setSrednjiKurs(double srednjiKurs) {
-		this.srednjiKurs = srednjiKurs;
-	}
 }
